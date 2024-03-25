@@ -24,7 +24,7 @@ A music app made with PHP, HTML5/CSS, and Bootstrap and powered by MySQL.
 
 
 ## Run
-To run the cms, simply clone into a local repository and run on your local server of choice. 
+To run the CMS, simply clone into a local repository and run on your local server of choice. 
 ## Technology
 The application is built with:
 
