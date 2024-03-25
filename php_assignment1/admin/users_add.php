@@ -46,54 +46,51 @@ if( isset( $_POST['fname'] ) )
 include( 'common/header.php' );
 
 ?>
-
+<div class="admin-content-wrap">
 <h2>Add User</h2>
-
+<div class="row">
 <form method="post">
+  <div class="form-input mb-3">
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" id="fname">
+  </div>
+  <div class="form-input mb-3">
+    <label for="lname">Last Name:</label>
+    <input type="text" name="lname" id="lname">
+  </div>
+  <div class="form-input mb-3">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+  </div>
+  <div class="form-input mb-3">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+  </div>
+  <div class="form-input mb-3">
+    <label for="active">Active:</label>
+    <?php
+    
+    $values = array( 'YES', 'NO' );
+    
+    echo '<select name="active" id="active">';
+    foreach( $values as $key => $value )
+    {
+      echo '<option value="'.$value.'"';
+      echo '>'.$value.'</option>';
+    }
+    echo '</select>';
+    
+    ?>
+  </div>
+  <div style="display: flex;">
+    <input type="submit" value="Add User" class="btn btn-primary">
+    <p><a href="users.php" class="btn btn-success" style="width: auto; margin-left:16px">Return to User List</a></p>
+  </div>
   
-  <label for="fname">First Name:</label>
-  <input type="text" name="fname" id="fname">
-  
-  <br>
-  
-  <label for="lname">Last Name:</label>
-  <input type="text" name="lname" id="lname">
-  
-  <br>
-  
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email">
-  
-  <br>
-  
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password">
-  
-  <br>
-  
-  <label for="active">Active:</label>
-  <?php
-  
-  $values = array( 'YES', 'NO' );
-  
-  echo '<select name="active" id="active">';
-  foreach( $values as $key => $value )
-  {
-    echo '<option value="'.$value.'"';
-    echo '>'.$value.'</option>';
-  }
-  echo '</select>';
-  
-  ?>
-  
-  <br>
-  
-  <input type="submit" value="Add User">
   
 </form>
-
-<p><a href="users.php"><i class="fas fa-arrow-circle-left"></i> Return to User List</a></p>
-
+</div>
+</div>
 
 <?php
 

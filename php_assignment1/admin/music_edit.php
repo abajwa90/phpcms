@@ -66,7 +66,7 @@ if( isset( $_GET['id'] ) )
 include( 'common/header.php' );
 
 ?>
-
+<div class="admin-content-wrap">
 <h2>Edit Music</h2>
 <div class="row">
     <form method="POST">
@@ -106,12 +106,14 @@ include( 'common/header.php' );
           <label for="album_cover" class="form-label">Album Cover</label>
           <input type="text" class="form-control" id="album_cover" name="album_cover" value="<?php echo $music['album_cover'];?>">
         </div>
-        <button name="submit" class="btn btn-primary" type="submit" value="Add Music">Add Music</button>
+        <div style="display: flex;">
+          <button name="submit" class="btn btn-primary" type="submit" value="Edit Music">Edit Music</button>
+          <p><a href="musics.php" class="btn btn-success" style="width: auto; margin-left:16px">Return to Music List</a></p>
+        </div>
     </form>
 </div>
 
-<p><a href="musics.php"><i class="fas fa-arrow-circle-left"></i> Return to Music List</a></p>
-
+</div>
 
 <?php
 

@@ -9,25 +9,20 @@ secure();
 include( 'common/header.php' );
 
 ?>
-
+<div class="dashboard-outter">
 <ul id="dashboard">
   <li>
-    <a href="musics.php">
-      Manage Projects
+    <a href="musics.php" class="btn">
+      Manage Musics
     </a>
   </li>
   <li>
-    <a href="users.php">
+    <a href="users.php" class="btn">
       Manage Users
     </a>
   </li>
-  <li>
-    <a href="logout.php">
-      Logout
-    </a>
-  </li>
 </ul>
-
+</div>
 <?php
 
 include( 'common/footer.php' );

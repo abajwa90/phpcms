@@ -10,6 +10,7 @@
 
 ul {
     list-style: none;
+    margin-bottom: 0;
 }
 
 li, a {
@@ -19,6 +20,7 @@ li, a {
 p, span, a {
     font-family: var(--main-font);
     color: var(--black);
+    margin-bottom: 0;
 }
 
 img {
@@ -170,6 +172,10 @@ header {
 .btn.btn-danger {
     background-color: #dc3545;
     border-color: #dc3545;
+}
+.btn.btn-success {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
 }
 /* form elements */
 .form-label{
@@ -378,4 +384,72 @@ header {
     font-style: normal;
     font-size: var(--h3);
     color: var(--mainblue);
+}
+
+
+/* admin - login*/
+.login-outter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--gray);
+}
+.login-wrap{
+    min-width: 420px;
+    height: fit-content;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+.login-wrap .form-input{
+    display: flex;
+    align-items: center;
+}
+.login-wrap .form-input .form-label{
+    margin-bottom: 0;
+    margin-right: 8px;
+    width: 120px;
+}
+.login-wrap h2{
+    font-family: var(--main-font);
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* admin-dashboard */
+.dashboard-outter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#dashboard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 400px;
+}
+#dashboard li .btn{
+    width: auto;
+}
+.btn:hover{
+    background-color: var(--darkblue);
+    color: #FFFFFF;
+}
+/* manage page */
+.admin-content-wrap{
+    padding: 48px;
+}
+.admin-content-wrap h2{
+    font-family: var(--main-font);
+    margin-bottom: 48px;
+}
+.admin-content-wrap p{
+    
+}
+.admin-content-wrap .img-wrap{
+    width: 84px;
+    border-radius: 5px;
 }

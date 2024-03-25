@@ -8,18 +8,24 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Website Admin</h1>
     <?php if(isset($_SESSION['id'])): ?>
-
-<p style="padding: 0 1%; text-align: center;">
-  <a href="dashboard.php">Dashboard</a> | 
-  <a href="logout.php">Logout</a>
-</p>
+<header>
+        <div class="header-align-wrap">
+            <div class="logo">
+                <p ><a href="../../index.php" class="logo-text">Pineapple Music</a></p>
+            </div>
+            <nav class="menu-wrap">
+                <ul>
+                    <li class="menu">
+                        <a href="dashboard.php">Dashboard</a> | 
+                        <a href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
 <?php endif; ?>
 
-<hr>
-
 <?php echo get_message(); ?>
 
-<div style="max-width: 1500px; margin: auto; padding: 0 1%;">

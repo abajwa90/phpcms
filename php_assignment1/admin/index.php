@@ -42,25 +42,27 @@ if( isset( $_POST['email'] ) )
 include( 'common/header.php' );
 
 ?>
+<div class="login-outter">
+  <div class="login-wrap">
+    <h2>Log in</h2>
+    <form method="post">
 
-<div style="max-width: 400px; margin:auto">
+      <div class="form-input mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" aria-describedby="email">
+      </div>
 
-  <form method="post">
+      <br>
+      <div class="form-input mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" class="form-control" id="password" name="password" aria-describedby="password">
+      </div>
+      <br>
+      <input type="submit" value="Login" class="btn btn-primary" style="margin: auto;">
 
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email">
-
-    <br>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-
-    <br>
-
-    <input type="submit" value="Login">
-
-  </form>
-  
+    </form>
+    
+  </div>
 </div>
 
 <?php

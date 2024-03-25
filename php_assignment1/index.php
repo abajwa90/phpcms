@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/admin/style.css">
 </head>
 <body>
     <?php
-        $connection = mysqli_connect('localhost','root','root','musicdb');
+        $connection = mysqli_connect('localhost','root','root','music');
 
         //test local db
         // $connection = mysqli_connect('localhost', 'root', 'root', 'music');
@@ -24,13 +24,12 @@
      <header>
         <div class="header-align-wrap">
             <div class="logo">
-                <p class="logo-text">Pineapple Music</p>
+            <p ><a href="../../index.php" class="logo-text">Pineapple Music</a></p>
             </div>
             <nav class="menu-wrap">
                 <ul>
                     <li class="menu">
-                        <a href="/" style="margin-right: 30px;">Home</a>
-                        <a href="add.php" style="margin-right: 50px;">Add a Song</a>
+                        <a href="/admin/index.php" style="margin-right: 50px;">Admin</a>
                     </li>
                 </ul>
             </nav>
@@ -43,13 +42,13 @@
             </div>
             <?php
                 foreach($musics as $music){
-                    $timeString = $music['Song_length'];
+                    $timeString = $music['length'];
                     $timeParts = explode(":", $timeString);
                     $minute = $timeParts[1];
                     $second = $timeParts[2]; 
-                    if($music['Genre'] === "K-POP"){
+                    if($music['genre'] === "K-POP"){
                         $txtClass = 'orange-color';
-                    }else if($music['Genre'] === "POP"){
+                    }else if($music['genre'] === "POP"){
                         $txtClass = 'blue-color';
                     }else{
                         $txtClass = 'default';
@@ -57,26 +56,16 @@
                     echo '<div class="list">
                     <div class="content-wrap">
                         <div class="img-wrap">
-                          <img src="'.$music['Album_cover'].'" class="img-rounded" alt="album-cover">
+                          <img src="'.$music['album_cover'].'" class="img-rounded" alt="album-cover">
                         </div>
                         <div class="card-body">
-                        <p class="card-text">'.$music['Album_title'].'</p>
-                          <h2 class="card-title">'.$music['Title'].'</h2>
-                          <p class="card-text">'.$music['Artist'].'</p>
-                          <p class="card-text '.$txtClass.'" style="font-weight:bold;">'.$music['Genre'].'</p>
-                          <p class="card-text">'.$music['Release_date'].'</p>
+                        <p class="card-text">'.$music['album_title'].'</p>
+                          <h2 class="card-title">'.$music['title'].'</h2>
+                          <p class="card-text">'.$music['artist'].'</p>
+                          <p class="card-text '.$txtClass.'" style="font-weight:bold;">'.$music['genre'].'</p>
+                          <p class="card-text">'.$music['release_date'].'</p>
                           <p class="card-text">'.$minute.'m '.$second.'s</p>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <form method="GET" action="update.php">
-                        <input type="hidden" name="music_id" value="'. $music['music_id'] .'">
-                        <button type="submit" name="edit" class="btn btn-success">Edit</button>
-                        </form>
-                        <form method="POST" action="deleteSong.php">
-                         <input type="hidden" name="music_id" value="'. $music['music_id'] .'">
-                        <button type="submit" name="delete" class="btn btn-sm btn-danger">Delete</button>
-                        </form>
                     </div>
                   </div>';
                 }
